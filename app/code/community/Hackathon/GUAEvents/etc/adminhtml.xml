@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <gua translate="title" module="hackathon_guaevents">
+            <title>Universal Analytics</title>
+            <sort_order>85</sort_order>
+            <children>
+                <events translate="title" module="hackathon_guaevents">
+                    <title>Events</title>
+                    <action>adminhtml/guaevents/index</action>
+                </events>
+            </children>
+        </gua>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <gua translate="title" module="hackathon_guaevents">
+                        <title>Universal Analytics</title>
+                        <children>
+                            <events translate="title" module="hackathon_guaevents">
+                                <title>Events</title>
+                            </events>
+                        </children>
+                    </gua>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
