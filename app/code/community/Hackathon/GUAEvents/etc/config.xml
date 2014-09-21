@@ -42,4 +42,13 @@
             </hackathon_guaevents>
         </blocks>
     </global>
+    <frontend>
+        <layout>
+            <updates>
+                <hackathon_guaevents module="Hackathon_GUAEvents">
+                    <file>guaevents.xml</file>
+                </hackathon_guaevents>
+            </updates>
+        </layout>
+    </frontend>
 </config>
