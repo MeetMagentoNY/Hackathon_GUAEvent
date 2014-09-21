@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<config>
+    <modules>
+        <Hackathon_GUAEvents>
+            <version>0.1.0</version>
+        </Hackathon_GUAEvents>
+    </modules>
+    <global>
+        <helpers>
+            <hackathon_guaevents>
+                <class>Hackathon_GUAEvents_Helper</class>
+            </hackathon_guaevents>
+        </helpers>
+        <models>
+            <hackathon_guaevents>
+                <class>Hackathon_GUAEvents_Model</class>
+            </hackathon_guaevents>
+            <hackathon_guaevents_resource>
+                <class>Hackathon_GUAEvents_Model_Resource</class>
+                <entities>
+                    <event>
+                        <table>guaevents</table>
+                    </event>
+                </entities>
+            </hackathon_guaevents_resource>
+        </models>
+        <resources>
+            <hackathon_guaevents_setup>
+                <setup>
+                    <module>Hackathon_GUAEvents</module>
+                    <class>Hackathon_GUAEvents_Model_Resource_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </hackathon_guaevents_setup>
+        </resources>
+        <blocks>
+            <hackathon_guaevents>
+                <class>Hackathon_GUAEvents_Block</class>
+            </hackathon_guaevents>
+        </blocks>
+    </global>
+</config>
