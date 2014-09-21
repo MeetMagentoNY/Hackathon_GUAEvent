@@ -14,6 +14,7 @@
         <models>
             <hackathon_guaevents>
                 <class>Hackathon_GUAEvents_Model</class>
+                <resourceModel>hackathon_guaevents_resource</resourceModel>
             </hackathon_guaevents>
             <hackathon_guaevents_resource>
                 <class>Hackathon_GUAEvents_Model_Resource</class>
