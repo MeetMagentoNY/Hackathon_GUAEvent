@@ -1,0 +1,17 @@
+<?php $_events = $this->getEvents() ?>
+<?php if ($_events->getSize() > 0): ?>
+<script>
+(function() {
+    <?php foreach ($_events as $_event): ?>
+        <?php $_jsEventName = $this->getJsEventName($_event) ?>
+        <?php $_triggerData = $this->getTriggerData($_event) ?>
+        <?php if ($_jsEventName !== 'text'): ?>
+        <?php $_prefix = $_triggerData->getSelectorType() == 'class' ? '.' : '#'; ?>
+        $$("<?php echo $_prefix . $_triggerData->getSelectorValue() ?>").on("<?php echo $_jsEventName ?>", function(event) {
+            window.ga("");
+        });
+        <?php endif; ?>
+    <?php endforeach; ?>
+})();
+<?php endif; ?>
+</script>
