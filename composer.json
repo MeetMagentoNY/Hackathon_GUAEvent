@@ -17,7 +17,7 @@
     "require": {
         "magento-hackathon/magento-composer-installer": "*",
         "fooman/googleanalyticsplus": "*",
-        "AOEPeople/Aoe_ExtendedFilter": "*"
+        "AOEPeople/Aoe_Layout": "*"
     },
     "require-dev": {
         "ecomdev/ecomdev_phpunit": "*"
@@ -25,7 +25,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/AOEPeople/Aoe_ExtendedFilter.git"
+            "url": "https://github.com/AOEPeople/Aoe_Layout.git"
         },
         {
             "type": "vcs",
