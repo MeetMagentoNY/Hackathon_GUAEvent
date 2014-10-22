@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <adminhtml_guaevent_index>
+        <reference name="content">
+            <block type="Aoe_Layout/Widget_Grid_Container" name="hackathon.guaevents.list">
+                <action method="setHeaderText" translate="text">
+                    <text>Analytics Events</text>
+                </action>
+                <block type="Aoe_Layout/Widget_Grid" name="hackathon.guaevents.list.grid" as="grid">
+                    <action method="setId">
+                        <id>hackathon_guaevents_list_grid</id>
+                    </action>
+                    <action method="setCollection">
+                        <collection helper="hackathon_guaevents/Event/getGridCollection" />
+                    </action>
+                    <action method="addColumn" translate="column.header">
+                        <id>event_id</id>
+                        <column>
+                            <header>ID</header>
+                            <width>50px</width>
+                            <align>right</align>
+                            <index>event_id</index>
+                            <type>number</type>
+                        </column>
+                    </action>
+                    <action method="addColumn" translate="column.header">
+                        <id>trigger_type</id>
+                        <column>
+                            <header>Trigger Type</header>
+                            <index>trigger_type</index>
+                        </column>
+                    </action>
+                    <action method="addColumn" translate="column.header">
+                        <id>trigger_data</id>
+                        <column>
+                            <header>Trigger Data</header>
+                            <index>trigger_data</index>
+                        </column>
+                    </action>
+                    <action method="addColumn" translate="column.header">
+                        <id>event_category</id>
+                        <column>
+                            <header>Event Category</header>
+                            <index>event_category</index>
+                        </column>
+                    </action>
+                    <action method="addColumn" translate="column.header">
+                        <id>event_label</id>
+                        <column>
+                            <header>Event Label</header>
+                            <index>event_label</index>
+                        </column>
+                    </action>
+                    <action method="addColumn" translate="column.header">
+                        <id>event_value</id>
+                        <column>
+                            <header>Event Value</header>
+                            <index>event_value</index>
+                            <type>number</type>
+                        </column>
+                    </action>
+                    <action method="setRowUrlRoute">
+                        <route>*/*/edit</route>
+                    </action>
+                    <action method="setRowUrlParams">
+                        <params>
+                            <id>{{id}}</id>
+                        </params>
+                    </action>
+                </block>
+            </block>
+        </reference>
+    </adminhtml_guaevent_index>
+    <adminhtml_guaevent_edit>
+        <reference name="content">
+            <block type="Aoe_Layout/Widget_Form_Container" name="hackathon.guaevents.edit" template="Aoe/Layout/widget/form/container.phtml">
+                <action method="setHeaderText" translate="text">
+                    <text>Edit Event</text>
+                </action>
+                <action method="addButton" translate="data.label data.onclick data.onclick.message">
+                    <id>delete</id>
+                    <data>
+                        <label>Delete</label>
+                        <onclick>
+                            <source>deleteConfirm('%s', '%s')</source>
+                            <message>Are you sure you want to do this?</message>
+                            <url helper="hackathon_guaevents/Event/getDeleteUrl"/>
+                        </onclick>
+                        <class>delete</class>
+                    </data>
+                </action>
+                <block type="Aoe_Layout/Widget_Form" name="hackathon.guaevents.edit.form" as="form">
+                    <action method="setForm">
+                        <form helper="hackathon_guaevents/Event/getForm"/>
+                    </action>
+                    <action method="setFormData">
+                        <key>action</key>
+                        <value helper="hackathon_guaevents/Event/getEditUrl"/>
+                    </action>
+                    <action method="addFormValues">
+                        <values helper="hackathon_guaevents/Event/getObjectData">
+                            <object helper="hackathon_guaevents/Event/getCurrentRecord"/>
+                        </values>
+                    </action>
+                </block>
+            </block>
+        </reference>
+    </adminhtml_guaevent_edit>
+</layout>

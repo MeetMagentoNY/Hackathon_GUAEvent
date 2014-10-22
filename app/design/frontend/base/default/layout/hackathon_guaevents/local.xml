@@ -12,7 +12,7 @@
 <layout version="0.1.0">
     <default>
         <reference name="before_head_end">
-            <block type="hackathon_guaevents/js" name="guaevents_js" after="-" template="guaevents/js.phtml"/>
+            <block type="hackathon_guaevents/js" name="guaevents_js" after="-" template="hackathon_guaevents/js.phtml"/>
         </reference>
     </default>
 </layout>

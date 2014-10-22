@@ -45,10 +45,30 @@
     <frontend>
         <layout>
             <updates>
-                <hackathon_guaevents module="Hackathon_GUAEvents">
-                    <file>guaevents.xml</file>
+                <hackathon_guaevents module="hackathon_guaevents">
+                    <file>hackathon_guaevents/local.xml</file>
                 </hackathon_guaevents>
             </updates>
         </layout>
     </frontend>
+    <adminhtml>
+        <layout>
+            <updates>
+                <hackathon_guaevents module="hackathon_guaevents">
+                    <file>hackathon_guaevents/events.xml</file>
+                </hackathon_guaevents>
+            </updates>
+        </layout>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Hackathon_GUAEvents before="Mage_Adminhtml">Hackathon_GUAEvents_Adminhtml</Hackathon_GUAEvents>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
 </config>

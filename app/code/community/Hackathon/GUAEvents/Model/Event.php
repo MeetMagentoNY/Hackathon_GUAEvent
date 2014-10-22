@@ -8,6 +8,10 @@
 
 class Hackathon_GUAEvents_Model_Event extends Mage_Core_Model_Abstract
 {
+    /**
+     * Event types
+     * TODO: create toOption hash for these
+     */
     const TYPE_FORM    = 'form';
     const TYPE_TEXT    = 'text';
     const TYPE_ELEMENT = 'element';

@@ -29,4 +29,14 @@ class Hackathon_GUAEvents_Model_Resource_Event_Collection extends Mage_Core_Mode
     {
         $this->_init('hackathon_guaevents/event');
     }
+
+    /**
+     * Returns the collection with aggregated data for grid
+     *
+     * @return Hackathon_GUAEvents_Model_Resource_Event_Collection
+     */
+    public function getGridCollection()
+    {
+        return $this;
+    }
 }

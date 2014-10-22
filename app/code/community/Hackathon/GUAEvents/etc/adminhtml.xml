@@ -7,7 +7,7 @@
             <children>
                 <events translate="title" module="hackathon_guaevents">
                     <title>Events</title>
-                    <action>adminhtml/guaevents/index</action>
+                    <action>adminhtml/guaevent/index</action>
                 </events>
             </children>
         </gua>
@@ -19,9 +19,9 @@
                     <gua translate="title" module="hackathon_guaevents">
                         <title>Universal Analytics</title>
                         <children>
-                            <events translate="title" module="hackathon_guaevents">
+                            <event translate="title" module="hackathon_guaevents">
                                 <title>Events</title>
-                            </events>
+                            </event>
                         </children>
                     </gua>
                 </children>
