@@ -1,5 +1,5 @@
-app/code/community/Hackathon/GUAEvents
-app/design/adminhtml/default/default/layout/hackathon_guaevents
-app/design/frontend/base/default/layout/hackathon_guaevents
-app/design/frontend/base/default/template/hackathon_guaevents
-app/etc/modules/Hackathon_GUAEvents.xml
+app/code/community/Hackathon/GUAEvent
+app/design/adminhtml/default/default/layout/hackathon_guaevent
+app/design/frontend/base/default/layout/hackathon_guaevent
+app/design/frontend/base/default/template/hackathon_guaevent
+app/etc/modules/Hackathon_GUAEvent.xml

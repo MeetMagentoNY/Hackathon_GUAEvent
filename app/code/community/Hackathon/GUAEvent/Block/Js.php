@@ -3,7 +3,7 @@
  * Google Universal Analytics Events
  *
  * @category Hackathon
- * @package Hackathon_GUAEvents
+ * @package Hackathon_GUAEvent
  * @license http://opensource.org/licenses/OSL-3.0 OSL-3.0
  */
 
@@ -11,20 +11,20 @@
  * Setup Model Resource Class
  *
  * @category Hackathon
- * @package Hackathon_GUAEvents
+ * @package Hackathon_GUAEvent
  * @author Joseph Leedy <joseph@leedy.us>
  */
-class Hackathon_GUAEvents_Block_Js extends Mage_Core_Block_Template
+class Hackathon_GUAEvent_Block_Js extends Mage_Core_Block_Template
 {
     /**
-     * @var Hackathon_GUAEvents_Model_Resource_Event_Collection
+     * @var Hackathon_GUAEvent_Model_Resource_Event_Collection
      */
     protected $_events;
 
     /**
      * Retrieves a collection of all events
      *
-     * @return Hackathon_GUAEvents_Model_Resource_Event_Collection
+     * @return Hackathon_GUAEvent_Model_Resource_Event_Collection
      */
     public function getEvents()
     {
@@ -32,7 +32,7 @@ class Hackathon_GUAEvents_Block_Js extends Mage_Core_Block_Template
             return $this->_events;
         }
 
-        $this->_events = Mage::getModel('hackathon_guaevents/event')->getCollection();
+        $this->_events = Mage::getModel('hackathon_guaevent/event')->getCollection();
 
         return $this->_events;
     }
@@ -40,10 +40,10 @@ class Hackathon_GUAEvents_Block_Js extends Mage_Core_Block_Template
     /**
      * Get the event handler type
      *
-     * @param  Hackathon_GUAEvents_Model_Event $event [description]
+     * @param  Hackathon_GUAEvent_Model_Event $event [description]
      * @return [type]
      */
-    public function getJsEventName(Hackathon_GUAEvents_Model_Event $event)
+    public function getJsEventName(Hackathon_GUAEvent_Model_Event $event)
     {
         $jsEventName = '';
 
@@ -66,15 +66,15 @@ class Hackathon_GUAEvents_Block_Js extends Mage_Core_Block_Template
     /**
      * Retrieve an object containing the trigger data for the event
      *
-     * @param Hackathon_GUAEvents_Model_Event $event
+     * @param Hackathon_GUAEvent_Model_Event $event
      * @return Varien_Object
      */
-    public function getTriggerData(Hackathon_GUAEvents_Model_Event $event)
+    public function getTriggerData(Hackathon_GUAEvent_Model_Event $event)
     {
-        $triggerData = unserialize($event->getTriggerData());
+        $triggerData = json_decode($event->getTriggerData());
         $triggerObject = new Varien_Object();
 
-        if (count($triggerInfo) > 0) {
+        if (count($triggerData) > 0) {
             $triggerObject->setData($triggerData);
         }
 

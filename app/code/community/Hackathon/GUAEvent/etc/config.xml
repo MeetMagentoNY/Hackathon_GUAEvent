@@ -1,0 +1,74 @@
+<?xml version="1.0" ?>
+<config>
+    <modules>
+        <Hackathon_GUAEvent>
+            <version>0.1.0</version>
+        </Hackathon_GUAEvent>
+    </modules>
+    <global>
+        <helpers>
+            <hackathon_guaevent>
+                <class>Hackathon_GUAEvent_Helper</class>
+            </hackathon_guaevent>
+        </helpers>
+        <models>
+            <hackathon_guaevent>
+                <class>Hackathon_GUAEvent_Model</class>
+                <resourceModel>hackathon_guaevent_resource</resourceModel>
+            </hackathon_guaevent>
+            <hackathon_guaevent_resource>
+                <class>Hackathon_GUAEvent_Model_Resource</class>
+                <entities>
+                    <event>
+                        <table>guaevent</table>
+                    </event>
+                </entities>
+            </hackathon_guaevent_resource>
+        </models>
+        <resources>
+            <hackathon_guaevent_setup>
+                <setup>
+                    <module>Hackathon_GUAEvent</module>
+                    <class>Hackathon_GUAEvent_Model_Resource_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </hackathon_guaevent_setup>
+        </resources>
+        <blocks>
+            <hackathon_guaevent>
+                <class>Hackathon_GUAEvent_Block</class>
+            </hackathon_guaevent>
+        </blocks>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <hackathon_guaevent module="hackathon_guaevent">
+                    <file>hackathon_guaevent/local.xml</file>
+                </hackathon_guaevent>
+            </updates>
+        </layout>
+    </frontend>
+    <adminhtml>
+        <layout>
+            <updates>
+                <hackathon_guaevent module="hackathon_guaevent">
+                    <file>hackathon_guaevent/event.xml</file>
+                </hackathon_guaevent>
+            </updates>
+        </layout>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Hackathon_GUAEvent before="Mage_Adminhtml">Hackathon_GUAEvent_Adminhtml</Hackathon_GUAEvent>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+</config>

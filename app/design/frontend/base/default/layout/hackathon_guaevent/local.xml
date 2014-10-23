@@ -4,7 +4,7 @@
  * Google Universal Analytics Events
  *
  * @category Hackathon
- * @package Hackathon_GUAEvents
+ * @package Hackathon_GUAEvent
  * @author Joseph Leedy <joseph@leedy.us>
  * @license http://opensource.org/licenses/OSL-3.0 OSL-3.0
  */
@@ -12,7 +12,7 @@
 <layout version="0.1.0">
     <default>
         <reference name="before_head_end">
-            <block type="hackathon_guaevents/js" name="guaevents_js" after="-" template="hackathon_guaevents/js.phtml"/>
+            <block type="hackathon_guaevent/js" name="guaevent_js" after="-" template="hackathon_guaevent/js.phtml"/>
         </reference>
     </default>
 </layout>

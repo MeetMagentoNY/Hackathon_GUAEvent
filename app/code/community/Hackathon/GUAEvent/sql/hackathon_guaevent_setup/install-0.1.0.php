@@ -3,18 +3,18 @@
  * Google Universal Analytics Events
  *
  * @category Hackathon
- * @package Hackathon_GUAEvents
+ * @package Hackathon_GUAEvent
  * @license http://opensource.org/licenses/OSL-3.0 OSL-3.0
  */
 
-/** @var $installer Hackathon_GUAEvents_Model_Resource_Setup */
+/** @var $installer Hackathon_GUAEvent_Model_Resource_Setup */
 $installer = $this;
 
 $connection = $installer->getConnection();
 
 $installer->startSetup();
 
-$eventTable = $connection->newTable($installer->getTable('hackathon_guaevents/event'))
+$eventTable = $connection->newTable($installer->getTable('hackathon_guaevent/event'))
     ->addColumn(
         'event_id',
         Varien_Db_Ddl_Table::TYPE_INTEGER,
@@ -71,7 +71,7 @@ $eventTable = $connection->newTable($installer->getTable('hackathon_guaevents/ev
         ),
         'The event\'s value'
     )
-    ->setComment('Google Universal Analytics Events table');
+    ->setComment('Google Universal Analytics Event table');
 
 $connection->createTable($eventTable);
 

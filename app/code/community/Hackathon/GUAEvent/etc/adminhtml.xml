@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <config>
     <menu>
-        <gua translate="title" module="hackathon_guaevents">
+        <gua translate="title" module="hackathon_guaevent">
             <title>Universal Analytics</title>
             <sort_order>85</sort_order>
             <children>
-                <events translate="title" module="hackathon_guaevents">
+                <event translate="title" module="hackathon_guaevent">
                     <title>Events</title>
                     <action>adminhtml/guaevent/index</action>
-                </events>
+                </event>
             </children>
         </gua>
     </menu>
@@ -16,10 +16,10 @@
         <resources>
             <admin>
                 <children>
-                    <gua translate="title" module="hackathon_guaevents">
+                    <gua translate="title" module="hackathon_guaevent">
                         <title>Universal Analytics</title>
                         <children>
-                            <event translate="title" module="hackathon_guaevents">
+                            <event translate="title" module="hackathon_guaevent">
                                 <title>Events</title>
                             </event>
                         </children>

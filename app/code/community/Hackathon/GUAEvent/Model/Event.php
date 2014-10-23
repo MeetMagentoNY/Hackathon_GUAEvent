@@ -6,7 +6,7 @@
  * @since 2014-09-21
  */
 
-class Hackathon_GUAEvents_Model_Event extends Mage_Core_Model_Abstract
+class Hackathon_GUAEvent_Model_Event extends Mage_Core_Model_Abstract
 {
     /**
      * Event types
@@ -17,11 +17,11 @@ class Hackathon_GUAEvents_Model_Event extends Mage_Core_Model_Abstract
     const TYPE_ELEMENT = 'element';
 
     /**
-     * Prefix of model events names
+     * Prefix of model event names
      *
      * @var string
      */
-    protected $_eventPrefix = 'hackathon_guaevents_event';
+    protected $_eventPrefix = 'hackathon_guaevent_event';
 
     /**
      * Parameter name in event
@@ -35,6 +35,6 @@ class Hackathon_GUAEvents_Model_Event extends Mage_Core_Model_Abstract
      */
     protected function _construct()
     {
-        $this->_setResourceModel('hackathon_guaevents/event');
+        $this->_setResourceModel('hackathon_guaevent/event');
     }
 }

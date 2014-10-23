@@ -6,19 +6,19 @@
  * @since 2014-10-20
  */
 
-class Hackathon_GUAEvents_Helper_Event extends Aoe_Layout_Helper_AbstractModelManager
+class Hackathon_GUAEvent_Helper_Event extends Aoe_Layout_Helper_AbstractModelManager
 {
-    const ACL_PATH_PREFIX = 'admin/gua/events/';
-    const REGISTRY_KEY = 'hackathon_guaevents_event_CURRENT';
+    const ACL_PATH_PREFIX = 'admin/gua/event/';
+    const REGISTRY_KEY = 'hackathon_guaevent_event_CURRENT';
 
     /**
      * Get a model instance
      *
-     * @return Hackathon_GUAEvents_Model_Event
+     * @return Hackathon_GUAEvent_Model_Event
      */
     public function getModel()
     {
-        return Mage::getModel('hackathon_guaevents/event');
+        return Mage::getModel('hackathon_guaevent/event');
     }
 
     /**
@@ -38,7 +38,7 @@ class Hackathon_GUAEvents_Helper_Event extends Aoe_Layout_Helper_AbstractModelMa
      */
     protected function getControllerRoute()
     {
-        return 'adminhtml/guaevents';
+        return 'adminhtml/guaevent';
     }
 
     /**
@@ -46,8 +46,8 @@ class Hackathon_GUAEvents_Helper_Event extends Aoe_Layout_Helper_AbstractModelMa
      */
     public function getForm()
     {
-        /** @var $form Hackathon_GUAEvents_Model_Form_Event */
-        $form = Mage::getModel('hackathon_guaevents/form_event');
+        /** @var $form Hackathon_GUAEvent_Model_Form_Event */
+        $form = Mage::getModel('hackathon_guaevent/form_event');
 
         return $form;
     }

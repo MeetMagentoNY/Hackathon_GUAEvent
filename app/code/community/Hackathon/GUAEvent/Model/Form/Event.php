@@ -4,14 +4,14 @@
  * @author David Robinson <first>.<last>@aoe.com
  * @since 2014-10-20
  */
-class Hackathon_GUAEvents_Model_Form_Event extends Varien_Data_Form
+class Hackathon_GUAEvent_Model_Form_Event extends Varien_Data_Form
 {
     public function __construct($attributes = array())
     {
         parent::__construct($attributes);
 
-        /** @var $helper Hackathon_GUAEvents_Helper_Event */
-        $helper = Mage::helper('hackathon_guaevents/event');
+        /** @var $helper Hackathon_GUAEvent_Helper_Event */
+        $helper = Mage::helper('hackathon_guaevent/event');
 
         $this->addData(
             array(

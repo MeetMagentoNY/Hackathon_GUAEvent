@@ -6,7 +6,7 @@
  * @since 2014-09-21
  */
 
-class Hackathon_GUAEvents_Helper_Data extends Mage_Core_Helper_Abstract
+class Hackathon_GUAEvent_Helper_Data extends Mage_Core_Helper_Abstract
 {
 
 }
