@@ -45,6 +45,13 @@
                         </column>
                     </action>
                     <action method="addColumn" translate="column.header">
+                        <id>event_action</id>
+                        <column>
+                            <header>Event Action</header>
+                            <index>event_action</index>
+                        </column>
+                    </action>
+                    <action method="addColumn" translate="column.header">
                         <id>event_label</id>
                         <column>
                             <header>Event Label</header>

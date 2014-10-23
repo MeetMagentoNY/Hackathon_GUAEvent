@@ -43,22 +43,31 @@ $eventTable = $connection->newTable($installer->getTable('hackathon_guaevent/eve
         array(
             'nullable' => false,
         ),
-        'Serialized array containing the data for the trigger'
+        'JSON containing the data for the trigger'
     )
     ->addColumn(
         'event_category',
         Varien_Db_Ddl_Table::TYPE_VARCHAR,
         255,
-        array(),
+        array(
+            'nullable' => false
+        ),
         'The event\'s category'
+    )
+    ->addColumn(
+        'event_action',
+        Varien_Db_Ddl_Table::TYPE_VARCHAR,
+        255,
+        array(
+            'nullable' => false
+        ),
+        'The event\'s action'
     )
     ->addColumn(
         'event_label',
         Varien_Db_Ddl_Table::TYPE_VARCHAR,
         255,
-        array(
-            'nullable' => false,
-        ),
+        array(),
         'The event\'s label'
     )
     ->addColumn(
@@ -67,7 +76,6 @@ $eventTable = $connection->newTable($installer->getTable('hackathon_guaevent/eve
         null,
         array(
             'unsigned' => true,
-            'nullable' => false,
         ),
         'The event\'s value'
     )

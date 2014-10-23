@@ -48,15 +48,44 @@ class Hackathon_GUAEvent_Model_Form_Event extends Varien_Data_Form
 
         $fieldset->addField(
             'event_category',
-            'textarea',
+            'text',
             array(
-                'name'            => 'trigger_data',
-                'label'           => $helper->__('Trigger Data'),
-                'title'           => $helper->__('Trigger Data'),
+                'name'            => 'event_category',
+                'label'           => $helper->__('Event Category'),
+                'title'           => $helper->__('Event Category'),
+                'required'        => true,
             )
         );
 
+        $fieldset->addField(
+            'event_action',
+            'text',
+            array(
+                'name'            => 'event_action',
+                'label'           => $helper->__('Event Action'),
+                'title'           => $helper->__('Event Action'),
+                'required'        => true,
+            )
+        );
 
+        $fieldset->addField(
+            'event_label',
+            'text',
+            array(
+                'name'            => 'event_label',
+                'label'           => $helper->__('Event Label'),
+                'title'           => $helper->__('Event Label'),
+            )
+        );
 
+        $fieldset->addField(
+            'event_value',
+            'text',
+            array(
+                'name'            => 'event_value',
+                'label'           => $helper->__('Event Value'),
+                'title'           => $helper->__('Event Value'),
+            )
+        );
     }
 }
