@@ -1,17 +1,20 @@
-<?php $_events = $this->getEvents() ?>
+<?php /* @var Hackathon_GUAEvent_Block_Js $this */ ?>
+<?php $_events = $this->getEvents() /* @var Hackathon_GUAEvent_Model_Resource_Event_Collection $_events */ ?>
 <?php if ($_events->getSize() > 0): ?>
 <script>
-(function() {
-    <?php foreach ($_events as $_event): ?>
-        <?php $_jsEventName = $this->getJsEventName($_event) ?>
-        <?php $_triggerData = $this->getTriggerData($_event) ?>
-        <?php if ($_jsEventName !== 'text'): ?>
-        <?php $_prefix = $_triggerData->getSelectorType() == 'class' ? '.' : '#'; ?>
-        $$("<?php echo $_prefix . $_triggerData->getSelectorValue() ?>").on("<?php echo $_jsEventName ?>", function(event) {
-            window.ga("");
-        });
+window.onload = function() {
+    <?php foreach ($_events as $_event): /* @var Hackathon_GUAEvent_Model_Event $_event */ ?>
+        <?php $_triggerData = $this->getTriggerData($_event); ?>
+        <?php if ($_event->getTriggerType() === Hackathon_GUAEvent_Model_Event::TYPE_ELEMENT): ?>
+            jQuery("<?php echo $_triggerData->getSelector() ?>").on("<?php echo $_triggerData->getEvent() ?>", function(event) {
+                <?php echo $this->getGAEventMethod($_event); ?>
+            });
+        <?php elseif ($_event->getTriggerType() === Hackathon_GUAEvent_Model_Event::TYPE_TEXT): ?>
+            if (jQuery("<?php echo $_triggerData->getSelector() ?>").text().indexOf("<?php echo $_triggerData->getText() ?>") > -1) {
+                <?php echo $this->getGAEventMethod($_event); ?>
+            }
         <?php endif; ?>
     <?php endforeach; ?>
-})();
+};
 <?php endif; ?>
 </script>

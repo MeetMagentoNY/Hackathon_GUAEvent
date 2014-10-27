@@ -4,6 +4,20 @@
  *
  * @author David Robinson <david.robinson@aoe.com>
  * @since 2014-09-21
+ *
+ * @method Hackathon_GUAEvent_Model_Event setTriggerType(string $type)
+ * @method Hackathon_GUAEvent_Model_Event setTriggerData(string $data)
+ * @method Hackathon_GUAEvent_Model_Event setEventCategory(string $category)
+ * @method Hackathon_GUAEvent_Model_Event setEventAction(string $action)
+ * @method Hackathon_GUAEvent_Model_Event setEventLabel(string $label)
+ * @method Hackathon_GUAEvent_Model_Event setEventValue(int $value)
+ *
+ * @method string getTriggerType()
+ * @method string getTriggerData()
+ * @method string getEventCategory()
+ * @method string getEventAction()
+ * @method string getEventLabel()
+ * @method int    getEventValue()
  */
 
 class Hackathon_GUAEvent_Model_Event extends Mage_Core_Model_Abstract

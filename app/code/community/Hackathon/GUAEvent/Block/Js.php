@@ -13,6 +13,7 @@
  * @category Hackathon
  * @package Hackathon_GUAEvent
  * @author Joseph Leedy <joseph@leedy.us>
+ * @author David Robinson <first>.<last>@aoe.com
  */
 class Hackathon_GUAEvent_Block_Js extends Mage_Core_Block_Template
 {
@@ -38,32 +39,6 @@ class Hackathon_GUAEvent_Block_Js extends Mage_Core_Block_Template
     }
 
     /**
-     * Get the event handler type
-     *
-     * @param  Hackathon_GUAEvent_Model_Event $event [description]
-     * @return [type]
-     */
-    public function getJsEventName(Hackathon_GUAEvent_Model_Event $event)
-    {
-        $jsEventName = '';
-
-        switch ($event->getTriggerType()) {
-            /**
-             * @todo change this to use constants from Model
-             */
-            case 'form_submit':
-                $jsEventName = 'submit';
-                break;
-            case 'element_click':
-                $jsEventName = 'click';
-                break;
-            case 'page_text':
-                $jsEventName = 'text';
-                break;
-        }
-    }
-
-    /**
      * Retrieve an object containing the trigger data for the event
      *
      * @param Hackathon_GUAEvent_Model_Event $event
@@ -71,7 +46,7 @@ class Hackathon_GUAEvent_Block_Js extends Mage_Core_Block_Template
      */
     public function getTriggerData(Hackathon_GUAEvent_Model_Event $event)
     {
-        $triggerData = json_decode($event->getTriggerData());
+        $triggerData = json_decode($event->getTriggerData(), true);
         $triggerObject = new Varien_Object();
 
         if (count($triggerData) > 0) {
@@ -79,5 +54,22 @@ class Hackathon_GUAEvent_Block_Js extends Mage_Core_Block_Template
         }
 
         return $triggerObject;
+    }
+
+    /**
+     * Constructs the js event method
+     *
+     * @param Hackathon_GUAEvent_Model_Event $event
+     * @return string
+     */
+    public function getGAEventMethod(Hackathon_GUAEvent_Model_Event $event)
+    {
+        return sprintf(
+            'ga("send", "event", "%s", "%s", "%s", "%s");',
+            $event->getEventCategory(),
+            $event->getEventAction(),
+            $event->getEventLabel(),
+            $event->getEventValue()
+        );
     }
 }
