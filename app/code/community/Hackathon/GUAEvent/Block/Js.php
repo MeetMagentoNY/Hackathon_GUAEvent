@@ -65,10 +65,10 @@ class Hackathon_GUAEvent_Block_Js extends Mage_Core_Block_Template
     public function getGAEventMethod(Hackathon_GUAEvent_Model_Event $event)
     {
         return sprintf(
-            'ga("send", "event", "%s", "%s", "%s", "%s");',
+            'ga("send", "event", %s, %s, %s, %s);',
             $event->getEventCategory(),
             $event->getEventAction(),
-            $event->getEventLabel(),
+            $event->getEventLabel() !== null ? $event->getEventLabel() : '""',
             $event->getEventValue()
         );
     }

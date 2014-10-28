@@ -13,6 +13,10 @@ window.onload = function() {
             if (jQuery("<?php echo $_triggerData->getSelector() ?>").text().indexOf("<?php echo $_triggerData->getText() ?>") > -1) {
                 <?php echo $this->getGAEventMethod($_event); ?>
             }
+        <?php elseif ($_event->getTriggerType() === Hackathon_GUAEvent_Model_Event::TYPE_FORM): ?>
+            jQuery("<?php echo $_triggerData->getSelector() ?>").submit(function() {
+                <?php echo $this->getGAEventMethod($_event); ?>
+            });
         <?php endif; ?>
     <?php endforeach; ?>
 };
