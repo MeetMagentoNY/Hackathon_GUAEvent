@@ -5,7 +5,7 @@
         {
             "name": "David Robinson",
             "email": "<first>.<last>@aoe.com"
-	
+
         },
         {
             "name": "Joseph Leedy",
@@ -16,7 +16,6 @@
     "type": "magento-module",
     "require": {
         "magento-hackathon/magento-composer-installer": "*",
-        "fooman/googleanalyticsplus": "*",
         "AOEPeople/Aoe_Layout": "*"
     },
     "require-dev": {
@@ -26,11 +25,6 @@
         {
             "type": "vcs",
             "url": "https://github.com/AOEPeople/Aoe_Layout.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/fooman/googleanalyticsplus.git"
         }
     ]
 }
-
