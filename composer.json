@@ -16,7 +16,8 @@
     "type": "magento-module",
     "require": {
         "magento-hackathon/magento-composer-installer": "*",
-        "AOEPeople/Aoe_Layout": "*"
+        "AOEPeople/Aoe_Layout": "dev-master#318ba9f394bc555d0ef2c0575576532d34079969",
+        "php": ">= 5.3"
     },
     "require-dev": {
         "ecomdev/ecomdev_phpunit": "*"
