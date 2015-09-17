@@ -1,19 +1,20 @@
 {
-    "name": "MeetMagentoNY/Hackathon_GUAEvent",
+    "name": "meetmagentony/hackathon_guaevent",
     "description": "Adds ability to add custom Google Universal Analytics Events from the admin",
     "authors": [
         {
             "name": "David Robinson",
-            "email": "<first>.<last>@aoe.com"
+            "email": "david.robinson@aoe.com"
 
         },
         {
             "name": "Joseph Leedy",
-            "email": "<first>.@leedy.us"
+            "email": "joseph@leedy.us"
 
         }
     ],
     "type": "magento-module",
+    "license": "OSL-3.0",
     "require": {
         "magento-hackathon/magento-composer-installer": "*",
         "AOEPeople/Aoe_Layout": "dev-master#318ba9f394bc555d0ef2c0575576532d34079969",
