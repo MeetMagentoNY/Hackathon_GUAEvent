@@ -1,8 +1,9 @@
 <?php /* @var Hackathon_GUAEvent_Block_Js $this */ ?>
 <?php $_events = $this->getEvents() /* @var Hackathon_GUAEvent_Model_Resource_Event_Collection $_events */ ?>
 <?php if ($_events->getSize() > 0): ?>
+<!-- BEGIN GUA EVENT -->
 <script>
-window.onload = function() {
+jQuery(document).ready(function() {
     <?php foreach ($_events as $_event): /* @var Hackathon_GUAEvent_Model_Event $_event */ ?>
         <?php $_triggerData = $this->getTriggerData($_event); ?>
         <?php if ($_event->getTriggerType() === Hackathon_GUAEvent_Model_Event::TYPE_ELEMENT): ?>
@@ -19,6 +20,7 @@ window.onload = function() {
             });
         <?php endif; ?>
     <?php endforeach; ?>
-};
-<?php endif; ?>
+});
 </script>
+<!-- END GUA EVENT -->
+<?php endif; ?>

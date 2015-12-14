@@ -71,7 +71,7 @@
                     </action>
                     <action method="setRowUrlParams">
                         <params>
-                            <id>{{id}}</id>
+                            <event_id>{{id}}</event_id>
                         </params>
                     </action>
                 </block>

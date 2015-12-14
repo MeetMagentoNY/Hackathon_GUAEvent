@@ -11,7 +11,7 @@
 -->
 <layout version="0.1.0">
     <default>
-        <reference name="before_head_end">
+        <reference name="before_body_end">
             <block type="hackathon_guaevent/js" name="guaevent_js" after="-" template="hackathon_guaevent/js.phtml"/>
         </reference>
     </default>
